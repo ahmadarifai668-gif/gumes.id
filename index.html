@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BarberApp — Aplikasi Kasir Barbershop + Hitung Komisi Kapster Otomatis</title>
+  <meta name="description" content="Aplikasi kasir barbershop untuk owner 1–3 cabang: hitung komisi kapster otomatis, laci kasir anti selisih, antrian & booking online, sampai laporan laba rugi. Coba gratis 14 hari.">
+  <meta name="keywords" content="aplikasi kasir barbershop, aplikasi barbershop Semarang, hitung komisi kapster, aplikasi pembukuan barbershop, kasir barbershop">
+  <meta name="theme-color" content="#111113">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / sosial. Setelah domain jadi, ganti og:image & og:url jadi URL absolut (lihat README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="BarberApp">
+  <meta property="og:title" content="BarberApp — Aplikasi Kasir Barbershop">
+  <meta property="og:description" content="Komisi kapster kehitung sendiri. Selisih laci langsung ketahuan. Kasir + pembukuan khusus barbershop, coba gratis 14 hari.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="BarberApp, aplikasi kasir barbershop">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BarberApp — Aplikasi Kasir Barbershop">
+  <meta name="twitter:description" content="Komisi kapster kehitung sendiri. Selisih laci langsung ketahuan. Coba gratis 14 hari.">
+  <meta name="twitter:image" content="og-image.png">
+
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon-512.png">
+
+  <link rel="preload" href="assets/fonts/geist-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BarberApp",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Aplikasi kasir barbershop",
+    "operatingSystem": "Web, Android, iOS, Windows, macOS",
+    "inLanguage": "id",
+    "description": "Aplikasi kasir dan pembukuan khusus barbershop: hitung komisi kapster otomatis, laci kasir, antrian & booking online, laporan laba rugi, neraca, dan arus kas.",
+    "keywords": "aplikasi kasir barbershop, aplikasi barbershop Semarang, hitung komisi kapster",
+    "offers": [
+      { "@type": "Offer", "name": "Bulanan", "price": "99000", "priceCurrency": "IDR" },
+      { "@type": "Offer", "name": "Tahunan", "price": "990000", "priceCurrency": "IDR" },
+      { "@type": "Offer", "name": "Sekali Bayar", "price": "2500000", "priceCurrency": "IDR" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke konten</a>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="BarberApp, kembali ke atas">
+        <img src="assets/logo-ondark-96.png" width="29" height="32" alt="">
+        <span>BarberApp</span>
+      </a>
+      <nav class="nav__menu" id="nav-menu" aria-label="Navigasi utama">
+        <a href="#fitur">Fitur</a>
+        <a href="#harga">Harga</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--gold btn--sm nav__cta js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">Coba Gratis</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="i-open" d="M4 7h16M4 12h16M4 17h16"/><path class="i-close" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero dark" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--dark">Aplikasi kasir barbershop</p>
+          <h1>Komisi kapster kehitung sendiri. <span class="text-gold">Selisih laci langsung ketahuan.</span></h1>
+          <p class="lead">Kasir, komisi, antrian, sampai laporan laba rugi dalam satu aplikasi. Cukup dari HP.</p>
+          <div class="btn-row">
+            <a class="btn btn--gold btn--lg js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 10h6M9 13.5h4"/></svg>
+              Coba Gratis 14 Hari
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#fitur">Lihat Fitur</a>
+          </div>
+          <ul class="hero__notes" aria-label="Keuntungan">
+            <li>Gratis 14 hari</li>
+            <li>Dibantu setup sampai jalan</li>
+            <li>Bisa di HP &amp; laptop</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="phone phone--back">
+            <img src="assets/ss-dashboard-480.webp" srcset="assets/ss-dashboard-480.webp 480w, assets/ss-dashboard.webp 780w" sizes="(min-width: 1024px) 270px, 200px" width="780" height="1688" alt="Dashboard owner BarberApp: omzet hari ini dan grafik omzet 7 hari" fetchpriority="low">
+          </div>
+          <div class="phone phone--front">
+            <img src="assets/ss-kasir-480.webp" srcset="assets/ss-kasir-480.webp 480w, assets/ss-kasir.webp 780w" sizes="(min-width: 1024px) 300px, 230px" width="780" height="1688" alt="Layar kasir BarberApp: pilih kapster, layanan terpilih ditandai centang emas, dan tombol Bayar" fetchpriority="high">
+          </div>
+          <div class="hero__glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MASALAH ========== -->
+    <section class="section light" id="masalah" aria-labelledby="masalah-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Kenal sama ini?</p>
+          <h2 id="masalah-title">Ngurus barbershop itu gampang. Ngurus duitnya yang bikin pusing.</h2>
+        </div>
+        <div class="pain-grid">
+          <article class="card pain reveal">
+            <svg class="pain__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11M9 8h6"/></svg>
+            <h3>Masih nyatet di buku</h3>
+            <p>Transaksi ditulis tangan, direkap tiap malam. Buku basah atau hilang, datanya ikut hilang.</p>
+          </article>
+          <article class="card pain reveal">
+            <svg class="pain__ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5M18 14.5A6 6 0 0 1 21 20"/></svg>
+            <h3>Hitung komisi suka ribut</h3>
+            <p>Akhir bulan ngitung ulang per kapster. Beda angka sedikit, jadi debat.</p>
+          </article>
+          <article class="card pain reveal">
+            <svg class="pain__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/><path d="M16 3l-2 3M8 3l2 3"/></svg>
+            <h3>Uang laci selisih</h3>
+            <p>Tutup toko, isi laci gak cocok sama catatan. Kurangnya di mana, gak ada yang tahu.</p>
+          </article>
+          <article class="card pain reveal">
+            <svg class="pain__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 2 4-6"/><circle cx="18" cy="7" r="0.5"/></svg>
+            <h3>Gak tau untung bersihnya</h3>
+            <p>Omzet kelihatan rame. Tapi setelah komisi, produk, dan biaya, sisanya berapa?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FITUR ========== -->
+    <section class="section white" id="fitur" aria-labelledby="fitur-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Fitur</p>
+          <h2 id="fitur-title">Semua yang dibutuhin barbershop. Gak lebih, gak kurang.</h2>
+        </div>
+
+        <!-- Fitur 1: Kasir -->
+        <div class="feature reveal">
+          <div class="feature__copy">
+            <p class="feature__num">01 · Kasir</p>
+            <h3>Pilih kapster, pilih layanan, bayar. Beres.</h3>
+            <p>Transaksi selesai dalam beberapa ketukan, bahkan pas lagi antre panjang.</p>
+            <ul class="checks">
+              <li>Satu layanan bisa dikerjain 2 kapster, komisi dibagi otomatis</li>
+              <li>Bayar campur tunai + QRIS, plus tips dan voucher</li>
+              <li>Kartu stempel untuk member</li>
+              <li>Struk dicetak atau langsung dikirim ke WA pelanggan</li>
+            </ul>
+          </div>
+          <div class="feature__media duo">
+            <div class="phone">
+              <img src="assets/ss-kasir-480.webp" srcset="assets/ss-kasir-480.webp 480w, assets/ss-kasir.webp 780w" sizes="(min-width: 1024px) 260px, 44vw" width="780" height="1688" loading="lazy" decoding="async" alt="Layar kasir: daftar kapster di atas, kartu layanan, dan panel total dengan tombol Bayar">
+            </div>
+            <div class="phone phone--offset">
+              <img src="assets/ss-bayar-480.webp" srcset="assets/ss-bayar-480.webp 480w, assets/ss-bayar.webp 780w" sizes="(min-width: 1024px) 260px, 44vw" width="780" height="1688" loading="lazy" decoding="async" alt="Lembar pembayaran dengan pilihan Tunai, QRIS, Transfer, atau Campur, serta kolom voucher dan tips">
+            </div>
+          </div>
+        </div>
+
+        <!-- Fitur 2: Komisi -->
+        <div class="feature feature--flip reveal">
+          <div class="feature__copy">
+            <p class="feature__num">02 · Komisi &amp; gaji</p>
+            <h3>Komisi kapster kehitung sendiri. Gak ada lagi debat akhir bulan.</h3>
+            <p>Setiap transaksi langsung masuk ke komisi kapster yang ngerjain.</p>
+            <ul class="checks">
+              <li>Komisi otomatis per kapster, plus bonus dan potongan</li>
+              <li>Catat kasbon, langsung kepotong pas gajian</li>
+              <li>Slip gaji bisa dikirim lewat WA</li>
+              <li>Kapster bisa cek komisinya sendiri + target harian/bulanan</li>
+            </ul>
+          </div>
+          <div class="feature__media duo">
+            <div class="phone">
+              <img src="assets/ss-komisi-480.webp" srcset="assets/ss-komisi-480.webp 480w, assets/ss-komisi.webp 780w" sizes="(min-width: 1024px) 260px, 44vw" width="780" height="1688" loading="lazy" decoding="async" alt="Halaman komisi dan gaji: total komisi belum dibayar, kolom bonus dan potongan per kapster">
+            </div>
+            <div class="phone phone--offset">
+              <img src="assets/ss-kapster-saya-480.webp" srcset="assets/ss-kapster-saya-480.webp 480w, assets/ss-kapster-saya.webp 780w" sizes="(min-width: 1024px) 260px, 44vw" width="780" height="1688" loading="lazy" decoding="async" alt="Tampilan kapster melihat komisinya sendiri bulan ini, peringkat, dan komisi yang belum dibayar">
+            </div>
+          </div>
+        </div>
+
+        <!-- Fitur 3: Laci kasir -->
+        <div class="feature reveal">
+          <div class="feature__copy">
+            <p class="feature__num">03 · Laci kasir</p>
+            <h3>Buka kasir, tutup kasir, selisih kelihatan.</h3>
+            <p>Uang keluar-masuk laci tercatat semua. Pas tutup kasir, ketahuan cocok atau nggak.</p>
+            <ul class="checks">
+              <li>Buka &amp; tutup kasir per shift</li>
+              <li>Uang keluar-masuk laci tercatat (beli galon, setor ke bank, dll.)</li>
+              <li>Hitung laci di akhir shift, selisih langsung ketahuan</li>
+            </ul>
+          </div>
+          <div class="feature__media">
+            <!--
+              GANTI NANTI: file assets/ss-tutup-kasir.webp yang dikirim rusak (isinya halaman "Not Found").
+              Setelah ada screenshot tutup kasir yang benar, ganti blok .browser di bawah dengan:
+              <div class="phone phone--solo">
+                <img src="assets/ss-tutup-kasir.webp" width="780" height="1688" loading="lazy" decoding="async"
+                     alt="Layar tutup kasir: hitung uang di laci dan bandingkan dengan catatan sistem">
+              </div>
+            -->
+            <figure class="browser">
+              <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+              <img src="assets/ss-desktop-kasir-1080.webp" srcset="assets/ss-desktop-kasir-1080.webp 1080w, assets/ss-desktop-kasir.webp 2160w" sizes="(min-width: 1024px) 560px, 92vw" width="2160" height="1350" loading="lazy" decoding="async" alt="Layar kasir versi laptop dengan menu uang keluar/masuk laci dan daftar transaksi shift ini">
+            </figure>
+          </div>
+        </div>
+
+        <!-- Fitur 4: Antrian -->
+        <div class="feature feature--flip reveal">
+          <div class="feature__copy">
+            <p class="feature__num">04 · Antrian &amp; booking online</p>
+            <h3>Pelanggan booking sendiri. Kamu tinggal motong.</h3>
+            <p>Bagikan link booking, pelanggan pilih jam dan kapster sendiri.</p>
+            <ul class="checks">
+              <li>Antrian per kapster, datang langsung atau booking</li>
+              <li>Booking baru masuk notif ke Telegram</li>
+              <li>Tombol "Ingatkan" kirim pengingat lewat WA</li>
+            </ul>
+          </div>
+          <div class="feature__media">
+            <div class="phone phone--solo">
+              <img src="assets/ss-antrian-480.webp" srcset="assets/ss-antrian-480.webp 480w, assets/ss-antrian.webp 780w" sizes="(min-width: 1024px) 280px, 62vw" width="780" height="1688" loading="lazy" decoding="async" alt="Halaman antrian: jumlah yang menunggu per kapster dan booking online berlabel BARU dengan tombol Ingatkan WA">
+            </div>
+          </div>
+        </div>
+
+        <!-- Fitur 5: Laporan -->
+        <div class="feature reveal">
+          <div class="feature__copy">
+            <p class="feature__num">05 · Laporan</p>
+            <h3>Tahu persis untungnya berapa. Tanpa harus ngerti akuntansi.</h3>
+            <p>Tiap transaksi otomatis dicatat ke jurnal pembukuan (double-entry) di belakang layar. Kamu tinggal buka laporannya.</p>
+            <ul class="checks">
+              <li>Laba rugi, neraca, dan arus kas</li>
+              <li>Export ke Excel &amp; PDF</li>
+              <li>Jurnal otomatis tiap bayar, gak perlu input dua kali</li>
+            </ul>
+          </div>
+          <div class="feature__media duo">
+            <div class="phone">
+              <img src="assets/ss-laporan-480.webp" srcset="assets/ss-laporan-480.webp 480w, assets/ss-laporan.webp 780w" sizes="(min-width: 1024px) 260px, 44vw" width="780" height="1688" loading="lazy" decoding="async" alt="Laporan laba rugi: pendapatan, biaya, untung bersih, dan margin, dengan tombol export Excel dan PDF">
+            </div>
+            <div class="phone phone--offset">
+              <img src="assets/ss-struk-sukses-480.webp" srcset="assets/ss-struk-sukses-480.webp 480w, assets/ss-struk-sukses.webp 780w" sizes="(min-width: 1024px) 260px, 44vw" width="780" height="1688" loading="lazy" decoding="async" alt="Pembayaran tersimpan beserta jurnal otomatis debit-kredit, dan tombol Cetak struk atau Kirim WA">
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid fitur kecil -->
+        <div class="mini-head reveal">
+          <h3>Dan yang lainnya</h3>
+        </div>
+        <ul class="mini-grid">
+          <li class="card mini reveal">
+            <svg class="mini__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l9-5 9 5-9 5z"/><path d="M3 8v8l9 5 9-5V8M12 13v8"/></svg>
+            <div><h4>Stok produk &amp; bahan</h4><p>Pomade, sampo, sampai bahan habis pakai.</p></div>
+          </li>
+          <li class="card mini reveal">
+            <svg class="mini__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l5-3 5 3v11M13 21V6l4-3 4 3v15M2 21h20"/><path d="M6 14h4M6 17h4"/></svg>
+            <div><h4>Multi-cabang</h4><p>Laporan per cabang atau digabung.</p></div>
+          </li>
+          <li class="card mini reveal">
+            <svg class="mini__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4M12 8v4l3 2"/></svg>
+            <div><h4>Backup otomatis harian</h4><p>Dikirim juga ke Telegram kamu.</p></div>
+          </li>
+          <li class="card mini reveal">
+            <svg class="mini__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>
+            <div><h4>Hak akses per user</h4><p>Owner, admin, kasir, kapster beda akses.</p></div>
+          </li>
+          <li class="card mini reveal">
+            <svg class="mini__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M12 7v7M9 11l3 3 3-3M10 18h4"/></svg>
+            <div><h4>Pasang di HP</h4><p>Ada ikonnya di layar, kayak aplikasi biasa.</p></div>
+          </li>
+          <li class="card mini reveal">
+            <svg class="mini__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+            <div><h4>Mode gelap</h4><p>Nyaman dilihat di barbershop yang redup.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== BISA DI HP & LAPTOP ========== -->
+    <section class="section dark devices" aria-labelledby="devices-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--dark">Satu akun, semua perangkat</p>
+          <h2 id="devices-title">Bisa di HP, bisa di laptop.</h2>
+          <p class="lead">Kasir pakai HP atau tablet di meja depan, owner pantau dari laptop atau dari mana aja. Datanya satu, sama persis.</p>
+        </div>
+        <div class="laptop reveal">
+          <div class="laptop__screen">
+            <img src="assets/ss-desktop-dashboard-1080.webp" srcset="assets/ss-desktop-dashboard-1080.webp 1080w, assets/ss-desktop-dashboard.webp 2160w" sizes="(min-width: 1100px) 960px, 90vw" width="2160" height="1350" loading="lazy" decoding="async" alt="Dashboard BarberApp di laptop: omzet hari ini, grafik 7 hari, komisi kapster bulan ini, stok menipis, dan tutup kasir terakhir">
+          </div>
+          <div class="laptop__base" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CARA MULAI ========== -->
+    <section class="section light" id="cara-mulai" aria-labelledby="mulai-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Cara mulai</p>
+          <h2 id="mulai-title">Tiga langkah, gak perlu ribet.</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">1</span>
+            <h3>Chat WA</h3>
+            <p>Klik tombol Coba Gratis, sebutin nama barbershop kamu.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">2</span>
+            <h3>Akun dibuatin</h3>
+            <p>Kami bantu input data kapster, layanan, dan harga sampai siap.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">3</span>
+            <h3>Langsung pakai</h3>
+            <p>Buka di HP atau laptop, langsung bisa transaksi.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== HARGA ========== -->
+    <section class="section white" id="harga" aria-labelledby="harga-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Harga</p>
+          <h2 id="harga-title">Harga jelas. Semua fitur di semua paket.</h2>
+          <p class="lead">Mulai dengan gratis 14 hari. Pilih paket kalau sudah cocok.</p>
+        </div>
+        <div class="price-grid">
+          <article class="card price reveal">
+            <h3>Bulanan</h3>
+            <p class="price__amount"><span class="price__rp">Rp</span>99.000<span class="price__per">/bulan</span></p>
+            <p class="price__note">Fleksibel, bisa berhenti kapan aja.</p>
+            <ul class="checks checks--sm">
+              <li>Semua fitur</li>
+              <li>Backup otomatis harian</li>
+              <li>Dibantu setup sampai jalan</li>
+            </ul>
+            <a class="btn btn--outline btn--block js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">Coba Gratis 14 Hari</a>
+          </article>
+
+          <article class="card price price--featured reveal">
+            <p class="badge">Paling Hemat</p>
+            <h3>Tahunan</h3>
+            <p class="price__amount"><span class="price__rp">Rp</span>990.000<span class="price__per">/tahun</span></p>
+            <p class="price__note">Bayar 10 bulan, dapat 12 bulan.</p>
+            <ul class="checks checks--sm">
+              <li>Semua fitur</li>
+              <li>Backup otomatis harian</li>
+              <li>Dibantu setup sampai jalan</li>
+            </ul>
+            <a class="btn btn--gold btn--block js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">Coba Gratis 14 Hari</a>
+          </article>
+
+          <article class="card price reveal">
+            <h3>Sekali Bayar</h3>
+            <p class="price__amount"><span class="price__rp">Rp</span>2.500.000</p>
+            <p class="price__note">+ perawatan Rp300.000/tahun mulai tahun ke-2.</p>
+            <ul class="checks checks--sm">
+              <li>Semua fitur</li>
+              <li>Backup otomatis harian</li>
+              <li>Dibantu setup sampai jalan</li>
+            </ul>
+            <a class="btn btn--outline btn--block js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">Coba Gratis 14 Hari</a>
+          </article>
+        </div>
+        <p class="price-foot">Cabang tambahan +50% dari harga paket. Harga belum termasuk printer struk.</p>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONI ========== -->
+    <!--
+      TESTIMONI: 3 slot di bawah masih PLACEHOLDER.
+      Ganti isi <blockquote> dan <figcaption> dengan testimoni asli (dengan izin pemiliknya),
+      lalu hapus class "testi--placeholder" dan teks "[TESTIMONI ASLI NANTI]".
+      Kalau belum ada testimoni sama sekali, hapus seluruh <section id="testimoni"> ini.
+    -->
+    <section class="section light" id="testimoni" aria-labelledby="testi-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Kata owner</p>
+          <h2 id="testi-title">Dari yang sudah pakai.</h2>
+        </div>
+        <div class="testi-grid">
+          <!-- TESTIMONI 1 -->
+          <figure class="card testi testi--placeholder reveal">
+            <blockquote><p>[TESTIMONI ASLI NANTI]</p></blockquote>
+            <figcaption><span class="testi__avatar" aria-hidden="true"></span><span><strong>Nama owner</strong><br>Nama barbershop, kota</span></figcaption>
+          </figure>
+          <!-- TESTIMONI 2 -->
+          <figure class="card testi testi--placeholder reveal">
+            <blockquote><p>[TESTIMONI ASLI NANTI]</p></blockquote>
+            <figcaption><span class="testi__avatar" aria-hidden="true"></span><span><strong>Nama owner</strong><br>Nama barbershop, kota</span></figcaption>
+          </figure>
+          <!-- TESTIMONI 3 -->
+          <figure class="card testi testi--placeholder reveal">
+            <blockquote><p>[TESTIMONI ASLI NANTI]</p></blockquote>
+            <figcaption><span class="testi__avatar" aria-hidden="true"></span><span><strong>Nama owner</strong><br>Nama barbershop, kota</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section white" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Yang sering ditanyain.</h2>
+          <p class="lead">Ada pertanyaan lain? <a class="link js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">Chat aja di WA</a>.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Perlu internet?</summary>
+            <p>Iya, BarberApp jalan online. Tapi ringan, sinyal HP biasa udah cukup.</p>
+          </details>
+          <details>
+            <summary>Bisa dipakai di HP, tablet, atau laptop?</summary>
+            <p>Bisa semua. Di HP juga bisa dipasang di layar utama, kayak aplikasi biasa.</p>
+          </details>
+          <details>
+            <summary>Datanya aman?</summary>
+            <p>Data di-backup otomatis tiap hari, dan backup-nya juga dikirim ke Telegram kamu. Akses tiap user juga diatur sesuai perannya: owner, admin, kasir, atau kapster.</p>
+          </details>
+          <details>
+            <summary>Kalau berhenti langganan, datanya gimana?</summary>
+            <p>Data tetap milik kamu. Backup-nya bisa didownload.</p>
+          </details>
+          <details>
+            <summary>Bisa untuk beberapa cabang?</summary>
+            <p>Bisa. Tiap cabang ada laporannya sendiri, plus laporan gabungan. Cabang tambahan dikenakan 50% dari harga paket.</p>
+          </details>
+          <details>
+            <summary>Cara bayarnya gimana?</summary>
+            <p>Transfer bank atau QRIS.</p>
+          </details>
+          <details>
+            <summary>Dibantu setup gak?</summary>
+            <p>Dibantu sampai jalan. Akun dibuatin, data kapster dan layanan dibantu input.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA PENUTUP ========== -->
+    <section class="section dark cta" aria-labelledby="cta-title">
+      <div class="container cta__inner reveal">
+        <h2 id="cta-title">Coba 14 hari. Rasain bedanya pas tutup kasir.</h2>
+        <p class="lead">Gratis, dibantu setup sampai jalan. Tinggal chat.</p>
+        <a class="btn btn--gold btn--xl js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 10h6M9 13.5h4"/></svg>
+          Coba Gratis 14 Hari
+        </a>
+        <p class="cta__sub">Tombol ini langsung buka chat WhatsApp.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer dark">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="BarberApp, kembali ke atas">
+          <img src="assets/logo-ondark-96.png" width="29" height="32" alt="" loading="lazy">
+          <span>BarberApp</span>
+        </a>
+        <p>Aplikasi kasir + pembukuan khusus barbershop.</p>
+      </div>
+      <ul class="footer__links">
+        <li><a class="js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener">WhatsApp: 0851-1123-0209</a></li>
+        <li><a href="https://instagram.com/ahmadarifai" target="_blank" rel="noopener">Instagram: @ahmadarifai</a></li>
+      </ul>
+      <p class="footer__copy">© 2026 BarberApp</p>
+    </div>
+  </footer>
+
+  <!-- Tombol WA melayang (khusus HP, muncul setelah lewat hero) -->
+  <a class="wa-float js-wa" href="https://wa.me/6285111230209?text=Halo%2C%20saya%20mau%20coba%20BarberApp%20untuk%20barbershop%20saya%3A%20" target="_blank" rel="noopener" aria-label="Coba gratis lewat WhatsApp" tabindex="-1" aria-hidden="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 10h6M9 13.5h4"/></svg>
+    <span>Coba Gratis</span>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
