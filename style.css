@@ -360,6 +360,63 @@ html:not(.js) .slider__nav, .slider.is-single .slider__nav { display: none; }
   }
 }
 
+/* ---------- Frame tablet ---------- */
+.tablet {
+  padding: 9px; border-radius: 26px; background: #0A0A0B;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .06) inset, 0 30px 50px -24px rgba(17, 17, 19, .45);
+}
+.tablet img { width: 100%; border-radius: 17px; aspect-ratio: 1230 / 1770; object-fit: cover; object-position: top; background: #fff; }
+
+/* ---------- Export PDF & Excel ---------- */
+.xpoints { display: grid; gap: 12px; margin-bottom: 36px; }
+.xpoints li { padding: 18px 20px; border-radius: 16px; background: var(--ivory); border: 1px solid var(--line); }
+.xpoints strong { display: block; font-size: 1.02rem; letter-spacing: -0.01em; margin-bottom: 4px; }
+.xpoints span { color: var(--muted); font-size: .95rem; line-height: 1.5; }
+@media (min-width: 640px) { .xpoints { grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1024px) { .xpoints { grid-template-columns: repeat(4, 1fr); } }
+
+.xshow { padding: 24px 16px 20px; border-radius: 24px; background: var(--ivory); border: 1px solid var(--line); }
+.xtabs { display: none; gap: 6px; padding: 5px; margin: 0 auto 24px; width: max-content; max-width: 100%; border-radius: 999px; background: var(--white); border: 1px solid var(--line); }
+.js .xtabs { display: flex; }
+.xtabs button {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px;
+  background: transparent; color: var(--muted); font: inherit; font-weight: 600; font-size: .95rem; cursor: pointer; transition: background-color .2s, color .2s;
+}
+.xtabs button[aria-selected="true"] { background: var(--onyx); color: var(--white); }
+.xtabs button { white-space: nowrap; }
+.xtabs__word { white-space: pre; }
+@media (max-width: 479px) { .xtabs__word { display: none; } .xtabs button { padding: 0 16px; } }
+.xtabs__badge { font-size: .66rem; font-weight: 700; letter-spacing: .06em; padding: 3px 6px; border-radius: 4px; color: #fff; }
+.xtabs__badge--pdf { background: #C8433A; }
+.xtabs__badge--xlsx { background: #1E6B45; }
+
+.xstage { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 14px; align-items: end; }
+.xdev { margin: 0; min-width: 0; }
+.xdev figcaption { margin-top: 10px; text-align: center; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.xdev--laptop { grid-column: 1 / -1; }
+.xdev--laptop .laptop__screen { padding: 7px; border-radius: 12px 12px 0 0; }
+.xdev--laptop .laptop__screen img { border-radius: 4px; }
+.xdev--laptop .laptop__base { height: 10px; }
+.xdev--tab { justify-self: end; width: 100%; max-width: 200px; }
+.xdev--hp { justify-self: start; width: 72%; max-width: 130px; }
+.xdev .phone { padding: 5px; border-radius: 26px; }
+.xdev .phone img { border-radius: 21px; }
+.xstage[data-format="pdf"] .x-xlsx, .xstage[data-format="xlsx"] .x-pdf { display: none; }
+.xnote { margin-top: 18px; text-align: center; font-size: .85rem; color: var(--muted); }
+
+@media (min-width: 768px) {
+  .xshow { padding: 32px 32px 24px; }
+  .xstage { position: relative; display: block; aspect-ratio: 100 / 56; }
+  .xdev { position: absolute; }
+  .xdev--laptop { left: 0; top: 0; width: 72%; }
+  .xdev--tab { right: 0; bottom: 34px; width: 25%; max-width: none; z-index: 1; }
+  .xdev--hp { left: 61%; bottom: 34px; width: 12.5%; max-width: none; z-index: 2; }
+  .xdev--tab figcaption, .xdev--hp figcaption { position: absolute; left: 0; right: 0; bottom: -34px; margin: 0; }
+  .xdev .phone { padding: 6px; border-radius: 30px; }
+  .xdev .phone img { border-radius: 24px; }
+}
+@media (min-width: 1100px) { .xdev--laptop .laptop__screen { padding: 10px; } .xdev--laptop .laptop__base { height: 14px; } }
+
 /* ---------- Devices ---------- */
 .devices { overflow: hidden; }
 .devices .section-head { margin-bottom: 40px; }

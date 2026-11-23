@@ -49,4 +49,8 @@ dan tambahkan:
 - `assets/logo-ondark-96.png`, `assets/logo-onlight-96.png`: logo ukuran kecil untuk navbar/footer.
 - `assets/app/*.webp` (+ `-480`): screenshot tambahan dari Panduan Pengguna untuk slide fitur.
 - `assets/panduan/*.webp`: preview halaman Panduan Pengguna (sampul, daftar isi, contoh kasus).
+- `assets/export/*.webp`: tampilan hasil export PDF & Excel (Laba Rugi) di HP, tablet, laptop.
+  Dibuat dari file export asli BarberApp (nama toko disamarkan jadi "Barbershop Contoh").
+  Generate ulang: jalankan `python3 -m http.server 8090` di root repo, lalu `node tools/build-export.js`.
+  Sumbernya: `tools/export/pdf-page.png` (halaman PDF) dan `tools/export/laba-rugi-xlsx.json` (isi sel Excel).
 - `og-image.png` (1200×630) dibuat dari `tools/og.html`. Untuk generate ulang: `node tools/build-og.js` (butuh Playwright).

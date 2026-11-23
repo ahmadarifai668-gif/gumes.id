@@ -103,6 +103,32 @@
     update();
   });
 
+  /* ---------- Export PDF / Excel: ganti tampilan ---------- */
+  var xstage = document.getElementById("xstage");
+  var xtabs = document.querySelectorAll(".xtabs [role=tab]");
+  if (xstage && xtabs.length) {
+    var selectTab = function (btn) {
+      xtabs.forEach(function (b) {
+        var on = b === btn;
+        b.setAttribute("aria-selected", on ? "true" : "false");
+        b.tabIndex = on ? 0 : -1;
+      });
+      xstage.setAttribute("data-format", btn.getAttribute("data-format"));
+      xstage.setAttribute("aria-labelledby", btn.id);
+    };
+    xtabs.forEach(function (b, i) {
+      b.tabIndex = i === 0 ? 0 : -1;
+      b.addEventListener("click", function () { selectTab(b); });
+      b.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          var n = xtabs[(i + (e.key === "ArrowRight" ? 1 : xtabs.length - 1)) % xtabs.length];
+          n.focus(); selectTab(n);
+        }
+      });
+    });
+  }
+
   /* ---------- Tombol WA melayang: muncul setelah lewat hero ---------- */
   var hero = document.getElementById("hero");
   var fab = document.querySelector(".wa-float");

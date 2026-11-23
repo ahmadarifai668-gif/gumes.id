@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spreadsheet mock</title>
+<style>
+  @font-face { font-family: Geist; src: url(../../assets/fonts/geist-500.woff2); font-weight: 500; }
+  @font-face { font-family: Geist; src: url(../../assets/fonts/geist-600.woff2); font-weight: 600; }
+  html, body { margin: 0; height: 100%; }
+  body { font-family: Geist, system-ui, sans-serif; background: #fff; display: flex; flex-direction: column; overflow: hidden; color: #1F1F1F; }
+  .bar { flex: 0 0 auto; display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 14px; background: #1E6B45; color: #fff; }
+  .bar svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+  .badge { font-size: 10px; font-weight: 600; letter-spacing: .06em; background: #fff; color: #1E6B45; padding: 3px 6px; border-radius: 4px; }
+  .name { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+  .tools { display: none; gap: 6px; }
+  .tools span { width: 26px; height: 22px; border-radius: 4px; background: #EEF1EF; }
+  .toolbar { flex: 0 0 auto; display: none; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-bottom: 1px solid #E3E3E3; background: #F8F9FA; }
+  .fx { flex: 0 0 auto; display: flex; align-items: center; height: 34px; border-bottom: 1px solid #D9D9D9; font: 13px "Liberation Sans", Arial, sans-serif; }
+  .fx .ref { width: 64px; text-align: center; border-right: 1px solid #D9D9D9; height: 100%; display: grid; place-items: center; color: #444; }
+  .fx .f { padding: 0 10px; color: #777; font-style: italic; }
+  .fx .val { color: #1F1F1F; }
+  .grid { flex: 1; overflow: hidden; }
+  table { border-collapse: collapse; table-layout: fixed; font: 13.5px "Liberation Sans", Arial, sans-serif; }
+  th, td { height: 21px; padding: 0 5px; border: 1px solid #E2E2E2; white-space: nowrap; overflow: hidden; }
+  th { background: #F3F3F3; color: #555; font-weight: 400; font-size: 12px; text-align: center; }
+  th.rn { width: 34px; }
+  td.n { text-align: right; }
+  td.t { overflow: visible; position: relative; z-index: 1; }
+  td.b { font-weight: 700; }
+  td.sel { outline: 2px solid #1E6B45; outline-offset: -2px; }
+  th.hl { background: #DDE9E2; color: #1E6B45; font-weight: 700; }
+  .tabs { flex: 0 0 auto; display: flex; align-items: center; gap: 4px; height: 38px; padding: 0 10px; background: #F3F3F3; border-top: 1px solid #D9D9D9; font-size: 13px; }
+  .tabs .plus { width: 26px; text-align: center; color: #666; font-size: 18px; }
+  .tabs .tab { padding: 6px 14px; background: #fff; border-radius: 0 0 6px 6px; color: #1E6B45; font-weight: 600; box-shadow: 0 1px 0 #1E6B45 inset; }
+  @media (min-width: 700px) { .tools { display: flex; } .toolbar { display: flex; } }
+</style></head>
+<body>
+  <div class="bar">
+    <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    <span class="badge">XLSX</span>
+    <span class="name">Laba-Rugi-2026-11-01-2026-11-24.xlsx</span>
+    <div class="tools"><span></span><span></span><span></span></div>
+    <svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+  </div>
+  <div class="toolbar" aria-hidden="true"></div>
+  <div class="fx"><span class="ref">B29</span><span class="f">fx</span><span class="val">1286750</span></div>
+  <div class="grid"><table id="t"></table></div>
+  <div class="tabs"><span class="plus">+</span><span class="tab" id="tab"></span></div>
+<script>
+fetch("laba-rugi-xlsx.json").then(r => r.json()).then(d => {
+  const px = w => Math.round(w * 7 + 5);
+  const nf = new Intl.NumberFormat("id-ID");
+  const fmt = (v, f) => {
+    if (typeof v !== "number") return v;
+    if (f.indexOf('"Rp"') === 0) return (v < 0 ? "-Rp " : "Rp ") + nf.format(Math.abs(v));
+    if (f.indexOf("#,##0") === 0) return (v < 0 ? "-" : "") + nf.format(Math.abs(v));
+    return String(v);
+  };
+  const map = {}; d.cells.forEach(c => map[c.r + ":" + c.c] = c);
+  const cols = Math.min(16, Math.max(8, Math.ceil((innerWidth - 34 - px(d.widths.A) - px(d.widths.B)) / 72) + 2)), rows = Math.max(d.rows + 8, 40);
+  const letters = "ABCDEFGHIJKLMNOP";
+  let h = "<colgroup><col style='width:34px'>";
+  for (let c = 1; c <= cols; c++) h += `<col style="width:${c === 1 ? px(d.widths.A) : c === 2 ? px(d.widths.B) : 72}px">`;
+  h += "</colgroup><tr><th class='rn'></th>";
+  for (let c = 1; c <= cols; c++) h += `<th class="${c === 2 ? "hl" : ""}">${letters[c - 1]}</th>`;
+  h += "</tr>";
+  for (let r = 1; r <= rows; r++) {
+    h += `<tr><th class="rn ${r === 29 ? "hl" : ""}">${r}</th>`;
+    for (let c = 1; c <= cols; c++) {
+      const cell = map[r + ":" + c];
+      if (!cell) { h += "<td" + (r === 29 && c === 2 ? " class='sel'" : "") + "></td>"; continue; }
+      const cls = [typeof cell.v === "number" ? "n" : "t", cell.b ? "b" : "", r === 29 && c === 2 ? "sel" : ""].join(" ");
+      const style = cell.fill ? ` style="background:#${cell.fill}"` : "";
+      const txt = String(fmt(cell.v, cell.fmt)).replace(/^ +/, m => "&nbsp;".repeat(m.length));
+      h += `<td class="${cls}"${style}>${txt}</td>`;
+    }
+    h += "</tr>";
+  }
+  const t = document.getElementById("t");
+  t.innerHTML = h;
+  t.style.width = (34 + px(d.widths.A) + px(d.widths.B) + (cols - 2) * 72) + "px";
+  document.getElementById("tab").textContent = d.sheet;
+  document.body.dataset.ready = "1";
+});
+</script>
+</body></html>
