@@ -1,0 +1,386 @@
+{
+"sheet": "Laba Rugi",
+"widths": {
+"A": 29.0,
+"B": 15.0
+},
+"rows": 31,
+"cells": [
+{
+"r": 1,
+"c": 1,
+"v": "Barbershop Contoh",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 2,
+"c": 1,
+"v": "Laba Rugi",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 3,
+"c": 1,
+"v": "1 Nov 2026 – 24 Nov 2026",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 4,
+"c": 1,
+"v": "Dibuat 24 November 2026 04:48",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 6,
+"c": 1,
+"v": "Pendapatan",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 6,
+"c": 2,
+"v": 7517000,
+"fmt": "\"Rp\" #,##0;-\"Rp\" #,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 7,
+"c": 1,
+"v": "Biaya + modal produk",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 7,
+"c": 2,
+"v": 6230250,
+"fmt": "\"Rp\" #,##0;-\"Rp\" #,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 8,
+"c": 1,
+"v": "Untung bersih",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 8,
+"c": 2,
+"v": 1286750,
+"fmt": "\"Rp\" #,##0;-\"Rp\" #,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 9,
+"c": 1,
+"v": "Margin",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 9,
+"c": 2,
+"v": "17%",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 10,
+"c": 1,
+"v": "Pelanggan",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 10,
+"c": 2,
+"v": 93,
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 12,
+"c": 1,
+"v": "Rincian",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 13,
+"c": 1,
+"v": "Keterangan",
+"fmt": "General",
+"b": true,
+"fill": "EEEEEE"
+},
+{
+"r": 13,
+"c": 2,
+"v": "Jumlah",
+"fmt": "General",
+"b": true,
+"fill": "EEEEEE"
+},
+{
+"r": 14,
+"c": 1,
+"v": "PENDAPATAN",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 15,
+"c": 1,
+"v": "   Pendapatan Jasa",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 15,
+"c": 2,
+"v": 6269086,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 16,
+"c": 1,
+"v": "   Penjualan Produk",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 16,
+"c": 2,
+"v": 1247914,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 17,
+"c": 1,
+"v": "Total pendapatan",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 17,
+"c": 2,
+"v": 7517000,
+"fmt": "#,##0;-#,##0",
+"b": true,
+"fill": null
+},
+{
+"r": 18,
+"c": 1,
+"v": "MODAL PRODUK",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 19,
+"c": 1,
+"v": "   Modal Produk Terjual",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 19,
+"c": 2,
+"v": -832000,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 20,
+"c": 1,
+"v": "Laba kotor",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 20,
+"c": 2,
+"v": 6685000,
+"fmt": "#,##0;-#,##0",
+"b": true,
+"fill": null
+},
+{
+"r": 21,
+"c": 1,
+"v": "BIAYA",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 22,
+"c": 1,
+"v": "   Komisi Kapster",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 22,
+"c": 2,
+"v": -2693250,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 23,
+"c": 1,
+"v": "   Gaji Karyawan",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 23,
+"c": 2,
+"v": -2000000,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 24,
+"c": 1,
+"v": "   Listrik & Air",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 24,
+"c": 2,
+"v": -100000,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 25,
+"c": 1,
+"v": "   Perlengkapan Habis Pakai",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 25,
+"c": 2,
+"v": -80000,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 26,
+"c": 1,
+"v": "   Promosi & Iklan",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 26,
+"c": 2,
+"v": -300000,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 27,
+"c": 1,
+"v": "   Perawatan & Perbaikan",
+"fmt": "General",
+"b": false,
+"fill": null
+},
+{
+"r": 27,
+"c": 2,
+"v": -225000,
+"fmt": "#,##0;-#,##0",
+"b": false,
+"fill": null
+},
+{
+"r": 28,
+"c": 1,
+"v": "Total biaya",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 28,
+"c": 2,
+"v": -5398250,
+"fmt": "#,##0;-#,##0",
+"b": true,
+"fill": null
+},
+{
+"r": 29,
+"c": 1,
+"v": "UNTUNG BERSIH",
+"fmt": "General",
+"b": true,
+"fill": null
+},
+{
+"r": 29,
+"c": 2,
+"v": 1286750,
+"fmt": "#,##0;-#,##0",
+"b": true,
+"fill": null
+},
+{
+"r": 31,
+"c": 1,
+"v": "Uang yang diambil owner tidak dihitung sebagai biaya (lihat Arus kas).",
+"fmt": "General",
+"b": false,
+"fill": null
+}
+]
+}
