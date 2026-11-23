@@ -39,15 +39,14 @@ dan tambahkan:
 
 ## Yang perlu diganti nanti
 
-- **Testimoni** — 3 slot di section `#testimoni` masih placeholder `[TESTIMONI ASLI NANTI]`
-  (ada komentar di HTML). Ganti dengan testimoni asli, atau hapus section-nya.
-- **Screenshot tutup kasir** — `assets/ss-tutup-kasir.webp` yang dikirim rusak (isinya halaman "Not Found").
-  Sementara fitur Laci kasir pakai `ss-desktop-kasir.webp`. Setelah ada screenshot yang benar,
-  ikuti komentar `GANTI NANTI` di `index.html`.
+- **Testimoni** — section `#testimoni` sengaja dinonaktifkan (dalam komentar HTML) supaya halaman siap
+  dipakai untuk iklan. Kalau sudah ada testimoni asli (dengan izin), hapus tanda komentarnya dan isi.
 - **Nomor WA / pesan otomatis** — cari `wa.me/6285111230209` di `index.html` (semua tombol CTA pakai link yang sama).
 
 ## Aset turunan
 
 - `assets/ss-*-480.webp` dan `assets/ss-desktop-*-1080.webp`: versi kecil screenshot untuk `srcset` (HP lebih ringan).
 - `assets/logo-ondark-96.png`, `assets/logo-onlight-96.png`: logo ukuran kecil untuk navbar/footer.
+- `assets/app/*.webp` (+ `-480`): screenshot tambahan dari Panduan Pengguna untuk slide fitur.
+- `assets/panduan/*.webp`: preview halaman Panduan Pengguna (sampul, daftar isi, contoh kasus).
 - `og-image.png` (1200×630) dibuat dari `tools/og.html`. Untuk generate ulang: `node tools/build-og.js` (butuh Playwright).
